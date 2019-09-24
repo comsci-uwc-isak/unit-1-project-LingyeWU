@@ -14,6 +14,9 @@ Contents
 
 Planning
 ----------
+**Defining the problem (Tpoic 1.1.1)** 
+
+100-150 words explaining the context of the problem
 
 Design
 ---------
