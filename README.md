@@ -23,10 +23,44 @@ A computer program for purpose of recording information about their orders is ne
 4. Operational feasibility: This needs to be tested out after the program is built.
 5. Schedule feasibility: It will take (max.) 4 weeks to build the entire thing.
 
-
-
 Design
 ---------
+1. Script to install the app
+
+***The following script createsthe app folder and inside it creates two more folders: db and scripts.***
+```sh
+#!/bin/bash
+
+#This file creates the folder structure for the
+#minimal Car Rental App
+
+echo "starting the installation"
+echo "Enter the path where you want to install. Press ENTER"
+read path
+
+# moving to the desired location
+cd $path
+echo "moving to" $path
+echo $pwd
+
+#check for correct change directory
+if [ $path != $pwd ];
+then
+	echo "Error creating the folder structure"
+	exit
+fi
+
+#Create App folder
+mkdir RentalCarApp
+cd RentalCarApp
+
+#create folder for database and scripts
+mkdir DataBase
+mkdir Scripts
+
+echo "structure created successfully"
+```
+***Fixed*** The issue with brackets in line 16
 
 Development
 --------
