@@ -25,6 +25,9 @@ A computer program for purpose of recording information about their orders is ne
 
 Design
 ---------
+### First sketch of the system
+![Diagram](CarRental1.jpg)
+
 1. Script to install the app
 
 ***The following script createsthe app folder and inside it creates two more folders: db and scripts.***
