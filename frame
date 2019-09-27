@@ -1,0 +1,53 @@
+#!/bin/bash
+#This program prints out a frame (100*) with a message inside
+
+# Repeating printing out *, printing out the frame
+word=$1
+
+echo $word
+
+
+
+for (( i=0; i<100; i++ ))
+do
+  echo -n "*"
+done
+ echo " "
+
+# Second line
+  echo -n "*"
+   for (( i=0; i<98; i++ ))
+  do
+    echo -n " "
+  done
+    echo "*"
+# Third line
+    echo -n "*"
+    Len=${#word}
+    (( a=50-$Len/2 ))
+
+     for (( i=0; i<$a; i++ ))
+    do
+      echo -n " "
+    done
+    echo -n $word
+
+
+      for (( i=0; i<50-$Len+1; i++ ))
+    do
+      echo -n " "
+    done
+      echo "*"
+
+#Fourth Line
+    echo -n "*"
+      for (( i=0; i<98; i++ ))
+    do
+      echo -n " "
+    done
+      echo "*"
+
+for (( i=0; i<100; i++ ))
+do
+  echo -n "*"
+done
