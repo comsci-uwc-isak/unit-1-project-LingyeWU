@@ -67,6 +67,13 @@ echo "structure created successfully"
 
 Development
 --------
+### Development of the function: Create a new car.
+The following steps summarize the algorithm to create a new car in the system.
+1. get inputs (Plate, Model, Color, Passenger number)
+2. Check number of arguments. If 4 then continue, if not exit message.
+3. Write it to the main file with on eextra line. Not erasing other entries.
+4. Create car trip file with license plate.txt.
+
 
 Evaluation
 -----------
