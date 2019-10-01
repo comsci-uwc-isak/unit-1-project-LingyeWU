@@ -74,6 +74,16 @@ The following steps summarize the algorithm to create a new car in the system.
 3. Write it to the main file with on eextra line. Not erasing other entries.
 4. Create car trip file with license plate.txt.
 
+### Development of the function: Record a new car.
+The following steps summarize the algorithm to record a new car in the system.
+1. Check arguments (Plate, km, Dateout, Datein)
+2. Check that the car exists 
+```sh
+if test[-f "$file"]; 
+	then
+```
+3. If the car exists , then write the trip info in the $plate.txt file, without erasing previous trips.
+
 
 Evaluation
 -----------
