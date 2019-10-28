@@ -18,3 +18,14 @@ Sep.27th
 Today we spent the entire class on creating a frame with words in it.
 Using for loop is very interesting and calculating is interesting as well.
 
+Oct. 28th
+---------
+1. What skills have you developed so far?
+- skills to selfstudy;research on stackoverflow
+- skills on basic coding and project designing
+- skills on computational thinking
+2. What have worked for you in the classroom of CS?
+- How we always help each other and in my case how Tom always helps me.
+3. What are some things/activities strategies that you would change in the CS classroom to achieve your best in the next 6 weeks.
+- More practice and more available office hours please!
+- For myself, definitely more self-study and practice!
