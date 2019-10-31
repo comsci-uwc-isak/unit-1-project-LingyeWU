@@ -363,7 +363,7 @@ read answer
 ### Help(Man) Page
 Given the fact that there is no man page on windows system, I decided to instead create an online support page(.md) in this repository under the folder "Help". 
 
-[Click here to access the help folder](../HELP)
+[Click here to access the help folder](../Help)
 
 ### Test program
 (To be added)
