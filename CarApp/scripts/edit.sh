@@ -1,7 +1,7 @@
 #!/bin/bash
 #This program edit the information of an exiting car in the
 #maincarfile
-#user enters [license place] [model] [red] [pp]
+#user enters [license plate] [model] [color] [pp]
 
 if [ $# -ne 4 ]; then
   echo "Error with the number of arguments"
@@ -10,20 +10,20 @@ if [ $# -ne 4 ]; then
 fi
 
 license=$1
-maker=$2
-model=$3
+model=$2
+color=$3
 pp=$4
 
-cd ../Database
+cd ../dB
 
 if [ ! -f "$license.txt" ]; then
   echo "File not found!"
 fi
 
 #find the line with the given car plate and delete it
-sed -i '' "/^$license/d" maincarfile.txt
+sed -i "/$license/d" maincarfile.txt
 #add the new information
-echo "$license $maker $model $pp" >> maincarfile.txt
+echo "$license $model $color $pp" >> maincarfile.txt
 cd ../scripts
-bash frame2 "Car edited successfully"
+bash frame "Car edited successfully"
 

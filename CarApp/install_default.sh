@@ -1,9 +1,11 @@
 #!/bin/bash
 #This program installs the application under a default path
 #to the user's desktop for Windows user
+#also creates folder structure for CarRental App
 
 echo "starting the installation"
-echo "This app will be installed on Disc C"
+echo "This app will be installed on desktop. Press enter."
+read
 
 # moving to the desired location
 cd ~/Desktop
@@ -15,7 +17,7 @@ mkdir RentalCarApp
 cd RentalCarApp
 
 #create folder for database and scripts
-mkdir DataBase
-mkdir Scripts
+mkdir dB
 
 echo "structure created successfully"
+cp -r ~/desktop/CarApp/scripts/ ~/desktop/RentalCarApp/scripts/

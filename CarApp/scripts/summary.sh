@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script check the summary of a particular car
 
-cd /c/Users/Lingye/Desktop/G11/Computer\ Science/process-journal-LingyeWU/CarRental/DataBase
+cd ../dB
 
 s=0
 # checks number of arguments
@@ -11,7 +11,7 @@ if [ $# -ne 1 ]; then
 fi
 
 # checks if a car exist
- if [ ! -f ~/Desktop/CarRentalApp/db/$1.txt ]; then
+ if [ ! -f ~/Desktop/RentalCarApp/dB/$1.txt ]; then
    echo " File doesn't exist"
     exit
   fi
@@ -28,4 +28,4 @@ fi
       done < $1.txt
 
     cd ../scripts
-    bash frame.sh "Total age of $1: $s km"
+    bash frame "Total distance of $1: $s km"

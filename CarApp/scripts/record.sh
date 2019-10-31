@@ -1,4 +1,4 @@
-#!bin/bash
+#/!bin/bash
 #This program is created to record new trips for each car in record
 #Sep.30th
 
@@ -15,10 +15,11 @@ Dateout=$3
 Datein=$4
 
 #Check if the car exists
-cd RentalCarApp/DataBase
+cd ../dB
 file="$plate.txt"
 if [ -f "$file" ];
-  then echo "$plate $KM $Dateout $Datein" >> $plate.txt
+  then echo " $KM $Dateout $Datein" >> $plate.txt
+  cd ../scripts
   bash frame "Updated successfully"
 else
   echo "No car exists, please enter the car info first"

@@ -10,12 +10,13 @@ fi
 
 #Number of arguments is correct. Continue
 plate=$1
-Model=$2
-Colour=$3
-Passenger=$4
+model=$2
+colour=$3
+pp=$4
 
 #adding new entry to file maincarfile.txt
-echo "$plate $model $colour $pp" >> RentalCarApp/DataBase/maincarfile.txt
-cd RentalCarApp/DataBase
+echo " $plate $model $colour $pp" >> ~/Desktop/RentalCarApp/dB/maincarfile.txt
+cd ../dB
 echo "" > $plate.txt
+cd ../scripts
 bash frame "Car created successfully"
