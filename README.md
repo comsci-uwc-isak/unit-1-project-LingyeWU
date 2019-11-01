@@ -50,14 +50,18 @@ Design
 
 **Fig.1** This is a first sketch of the system considering three factors: input, processing, and output.
 
-![Diagram](Final_draft(1).png)
+![Diagram](Final.png)
+
+**Fig.2** Final skectch: folder test added.
 
 ### Test Plan
 ![Diagram](Test_precedure.jpg) 
 
-**Fig.3* This is the flow diagram to test the functionality within the process of CarRental project.
+**Fig.3** This is the flow diagram to test the functionality within the process of CarRental project.
 
-### Algorithm for each script
+Correction: install - Install does not create the test folder. Test is for the developer.
+
+### Flowchart for each steps
 
 
 
@@ -368,7 +372,7 @@ Given the fact that there is no man page on windows system, I decided to instead
 [Click here to access the help folder](https://github.com/comsci-uwc-isak/unit-1-project-LingyeWU/tree/master/Help)
 
 ### Test program
-(To be added)
+
 
 Evaluation
 -----------
