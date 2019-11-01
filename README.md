@@ -16,17 +16,19 @@ Planning
 ----------
 **Defining the problem (Tpoic 1.1.1)** 
 
-A computer program for purpose of recording information about their orders is needed by a car rental office. The company is specifically interested in building a program to collect basic information about the distance driven for each car. Stakeholders in this process include hardware, software, people working with it or using it and the immediate environment. In this case specially, the problem accompanies with client reqiurements including a simple terminal based program; a simple and transparent installation, etc. 
+Our client, a car rental office called Minimal Car Rental is looking for a computer program for purpose of recording information about their orders. The company is specifically interested in building a program to collect basic information about the distance driven for each car. In this case specially, the problem accompanies with client reqiurements including a simple terminal based program; a simple and transparent installation, etc. (see success criteria)
+
+Therefore, the RentalCarApp project is being created. 
 
 **Solution proposed**
 
-In order to meet clients' expectation of an easy, terminal-based system that enables the company a sufficient and effective way of better recording the data of their orders, I chose BASH as the language to code the project. Considering that these data are transferred from a manual record to a local system, I added functionalities such as backup and summary to complete the project and better meet users' needs.
+In order to meet clients' expectation of an easy, terminal-based system that enables the company a sufficient and effective way of better recording the data of their orders, I chose BASH as the language to code the project. Considering that these data are transferred from a manual record to a local system, I added functionalities such as backup and summary other than create, record, delete, and edit to complete the project and better meet users' needs. A simple installation and uninstallation script are also provided.
 
-- Github
+- WHY Github
 
 All scripts and documentation are stored in Github, making it easy to contribute to this open source projects, provide a clear documentation for the users, and showcase the project to our clients.
 
-- BASH
+- WHY BASH
 
 BASH is the language I used to code the project. Advantages of using Bash is that it can run most sh scripts without modification. Like the other GNU projects, the bash initiative was started to preserve, protect and promote the freedom to use, study, copy, modify and redistribute software, which perfectly falls in our clients' expectation on the project.
 
@@ -74,6 +76,7 @@ The following steps summarize the algorithm to install RentalCarApp on user's de
 2. Move to the desired location.
 3. Create App folder
 4. Create folder for datebase and scripts.
+5. Copy the scripts folder to the new location.
 ```sh
 #!/bin/bash
 #This program installs the application under a default path
@@ -110,7 +113,17 @@ cp -r ~/desktop/CarApp/scripts/ ~/desktop/RentalCarApp/scripts/
 The following steps summarize the algorithm to create a new car in the system.
 1. get inputs (Plate, Model, Color, Passenger number)
 2. Check number of arguments. If 4 then continue, if not exit message.
-3. Write it to the main file with on eextra line. Not erasing other entries.
+
+- Tool used : _if statement_
+```sh
+if [ $# -ne "4" ];
+then
+  echo "Wrong input. Please re-enter with Plate, Model, Colour, and Passengers"
+  exit
+fi
+```
+
+3. Write it to the main file with on an extra line. Not erasing other entries.
 4. Create car trip file with license plate.txt.
 
 ```sh
@@ -371,8 +384,249 @@ Given the fact that there is no man page on windows system, I decided to instead
 
 [Click here to access the help folder](https://github.com/comsci-uwc-isak/unit-1-project-LingyeWU/tree/master/Help)
 
-### Test program
+### Frame
+The following steps summarize the algorithm to create a frame.
+1. Get an input from the user.
+2. Print out # around the word, placing the word (string) in right middle.
+- Tool used  _for loop_
 
+```sh
+for (( i=0; i<$width; i++ ))
+do
+	echo -n "#"
+done
+echo " " #this is for going down one line
+
+#prints the padding
+for (( p=1; p<padding ; p++ ))
+do
+	echo -n "#"
+	for (( s=0; s<$width-2; s++ ))
+	do
+		echo -n " "
+	done
+	echo "#"
+done
+```
+
+3. Print it out to the terminal.
+```sh
+#!/bin/bash
+
+word=$1
+len=${#word}
+padding=3
+
+
+#lenght of the frame
+width=80
+(( spaces=$width/2-$len/2-1 ))
+
+# Print a whole line with symbol
+for (( i=0; i<$width; i++ ))
+do
+	echo -n "#"
+done
+echo " " #this is for going down one line
+
+#prints the padding
+for (( p=1; p<padding ; p++ ))
+do
+	echo -n "#"
+	for (( s=0; s<$width-2; s++ ))
+	do
+		echo -n " "
+	done
+	echo "#"
+done
+
+#line for the word
+echo -n "#"
+for (( s=0;s<$spaces;s++ ))
+do
+	echo -n " "
+done
+echo -n $word
+
+if [[ $(( $len%2 )) -ne 0 ]]; then
+        (( spaces=$spaces-1 ))
+
+fi
+for (( s=0;s<$spaces;s++ ))
+do
+        echo -n " "
+done
+echo "#"
+
+#prints the padding
+for (( p=1; p<padding ; p++ ))
+do
+        echo -n "#"
+        for (( s=0; s<$width-2; s++ ))
+        do
+                echo -n " "
+        done
+        echo "#"
+done
+
+#print bottom frame
+for (( i=0; i<$width; i++ ))
+do
+        echo -n "#"
+done
+echo " " #this is for going down one line
+```
+
+### Test program
+***summary***
+For developers, I intentionally created a folder with 4 test files. (testrecord.sh, testinstall.sh, testdelete.sh, testcreate.sh) These files are for developers to test if the syntax of RentalCarApp actually works.
+
+#### Test.1 
+***testcreate.sh*** : This file tests the first success criteria: A car can be created and stored in the database.
+```sh
+#!/bin/bash
+
+#This file will test the first success criteria: A car can be created and stored in the database.
+
+#Step 1: Create a car using the script create
+cd ~/Desktop/RentalCarApp/scripts
+bash create.sh TXM302 Nissan Red 9
+
+#Step 2: Check that the license file (.txt) was created
+if [ -f ../dB/TXM302.txt ]; then
+	echo "Test 1: A txt file was created inside the database -- passed"
+else
+	echo "Test 1: txt file not found -- failed"
+fi
+
+#Step 3: Check that the car was added to the main file
+cat ../dB/maincarfile.txt #Echoing the entire contents of maincarfile.txt to the user for clarity
+lastLine=$( tail -n 1 ../dB/maincarfile.txt ) #This grabs the last line of the maincarfile.txt
+if [ "TXM302 Nissan Red 9" == "$lastLine" ]; then
+	echo "Test 2: The statistics of the car was created inside the maincarfile.txt -- passed"
+else
+	echo "Test 2: The statistics were not logged -- failed"
+fi
+```
+
+- Problems and solution
+
+**_fixed_** First run of the program we had one issue: the test file needed to move to the main folder Also the create program did not store the license file inside the Database folder. Changing the line 
+```sh
+"echo " " > $license.txt" to "echo " " > dB/$license.txt" 
+```
+solved this issue.
+
+**_fixed_** Second run of the program we had one issue: the test file needed to move to the main folder.
+```sh
+cd ../
+```
+
+- Tools used
+
+To check that car was created in main file (maincarfile.txt), the following command is used 
+```sh
+lastline = $( tail -n 1 dB/maincarfile.txt )
+```
+Tail reads file from the bottom, n is number of the line.
+
+#### Test.2
+***testinstall.sh*** : This file will test if the RentalCarApp is installed on user's Desktop.
+
+```sh
+#!/bin/bash
+
+#This file will test if the RentalCarApp is installed on user's Desktop
+
+#Step 1: create the RentalCarApp folder
+cd ~/Desktop/CarApp/
+bash install_default.sh
+
+#Step 2: check if the file is installed on desktop
+if [ -d ~/Desktop/RentalCarApp ]; then
+  echo "Test 1: RentalCarApp on desktop - passed"
+else
+  echo "Test 1: RentalCarApp on desktop - failed"
+fi
+
+#Step 3: check if the folder dB and scripts are created
+if [ -d ~/Desktop/RentalCarApp/scripts ] && [ -d ~/Desktop/RentalCarApp/dB ];
+then
+  echo "Test 2: dB and scripts created inside RentalCarApp - passed"
+else
+  echo "Test 2: dB and scripts created inside RentalCarApp - failed"
+fi
+
+#Step 4: check if all scriptes are copied from CarApp folder
+diff -r ~/desktop/CarApp/scripts ~/desktop/RentalCarApp/scripts/
+```
+- Problems and solution
+
+**_fixed_** First run of the program we had one issue: 
+```sh
+if [ -f ~/Desktop/RentalCarApp ]
+```
+This part did not work. By realizing that for checking if a file exists is different from checking if a directory exists solved this issue.
+
+- Tools used
+In order to check if the scripts folder is perfectly copied into the RentalCarApp folder, diff syntax is used.
+```sh
+diff -r ~/desktop/CarApp/scripts ~/desktop/RentalCarApp/scripts/
+```
+This syntax outputs nothing if there is no difference and send a message to the user if there is a difference.
+
+#### Test.3
+***testrecord.sh*** :This file will test the first success criteria: A new trip of the car is being recorded into the maincarfile.txt.
+
+```sh
+#!/bin/bash
+#This file will test the first success criteria: A new trip of the car is being recorded into the maincarfile.txt.
+
+#Step 1: Record a trip using the script record
+cd ~/Desktop/RentalCarApp/scripts
+bash record.sh TXM302 89 20190808 20191010
+
+#Step 2: check if the new trip information is added
+cd ../dB
+cat TXM302.txt
+lastLine=$( tail -n 1 ../dB/TXM302.txt )
+if [ " 89 20190808 20191010" == "$lastLine" ]; then
+	echo "Test: The statistics of the car was created inside the maincarfile.txt -- passed"
+else
+	echo "Test: The statistics were not logged -- failed"
+fi
+```
+
+#### Test.4
+***testdelete.sh***: This file will test if the script for delete a car works.
+
+```sh
+#!/bin/bash
+
+#This file will test if the script for delete a car works
+
+#Step 1: Deleting a car using the script create
+cd ~/Desktop/RentalCarApp/scripts
+bash delete.sh TXM302
+
+#Step 2: Check if the car is removed from individual car file
+if [ ! -f ~/Desktop/RentalCarApp/scripts/TXM302 ];
+then
+  echo "test 1 - removing from the license plate file - passed"
+  else
+    echo "test 1 - removing from the license plate file - failed"
+    fi
+
+    #Step 3: Check if the car is removed from the maincarfile.txt
+    cd ../dB
+    cat maincarfile.txt
+    sed -i "/TXM302/d" maincarfile.txt
+    if ! grep -q 'TXM302' "maincarfile.txt"; then
+      echo "test 2 - removing from maincarfile.txt - passed"
+      else
+        echo "test 2 - removing from maincarfile.txt - failed"
+        fi
+```
 
 Evaluation
 -----------
@@ -407,5 +661,6 @@ A backup system is considered during the process of designing | YES |
 
 1. Add a functuality to the project: Calculate. This syntax should enable the client to calculate the money of each car rent.
 
-
-
+Appendix
+---------
+### Work Cited
