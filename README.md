@@ -50,10 +50,12 @@ Design
 
 **Fig.1** This is a first sketch of the system considering three factors: input, processing, and output.
 
+![Diagram](Final_draft(1).png)
+
 ### Test Plan
 ![Diagram](Test_precedure.jpg) 
 
-**Fig.2** This is the flow diagram to test the functionality within the process of CarRental project.
+**Fig.3* This is the flow diagram to test the functionality within the process of CarRental project.
 
 ### Algorithm for each script
 
