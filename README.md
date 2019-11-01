@@ -372,20 +372,29 @@ Evaluation
 -----------
 
 ### Evaluation of the project
-1. A car can be created and stored in the database
-1. A car information can be edited
-1. A car can be deleted from the database
-1. The installation is ***simple-> one step process*
-1. A summary (total/average distance traveled) can be generated for a particular car
-1. Trips can be recorded and stored for an existing car
-1. A simple, accessible database
-1. A backup system is considered during the process of designing
+
+| Criteria of evaluation | IF MET | Comments |
+| --- | --- | --- |
+| A car can be created and stored in the database | YES | maincarfile.txt & license plate file |
+| A car information can be edited | YES | ***only inside maincarfile*** |
+| A car can be deleted from the database | YES | 
+The installation is ***simple-> one step process*** | YES | Re-arranged files in to folder CarApp 
+A summary (total/average distance traveled) can be generated for a particular car | YES | ***only total distance***
+Trips can be recorded and stored for an existing car | YES | 
+A simple, accessible database | YES | Date can be easily restored and copied; a fully-developed backup system
+A backup system is considered during the process of designing | YES | 
+
 
 ### Improvements for future
+
 #### Minor improvements
 1. Install and uninstall: Allow the users to enter the location wherever they want the app to be and in uninstall automatically goes to the location.
 
 1. Backup:  Let the program have an online database, so in case when all the data from PC will be removed, the program data will have a backup, that won’t be affected by any kind of malicious programs or viruses.
+
+1. Edit: Create a script to edit trip information as well.
+
+1. Summary: Create a summary2.sh for client to calculate its average travel distance per day
 
 #### Major improvements
 1. Create an interface for the project, making the precedure more visual.
