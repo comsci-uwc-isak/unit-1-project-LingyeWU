@@ -65,12 +65,17 @@ Correction: install - Install does not create the test folder. Test is for the d
 
 ### Flowchart for each steps
 
+#### Create
+![Diagram](create.png)
+
+#### Record
+![Diagram](record.png)
 
 
 Development
 --------
 
-### Install
+### 1. Install
 The following steps summarize the algorithm to install RentalCarApp on user's desktop.
 1. Send a message to the user about where the app is being installed in.
 2. Move to the desired location.
@@ -109,7 +114,7 @@ cp -r ~/desktop/CarApp/scripts/ ~/desktop/RentalCarApp/scripts/
 
 **_fixed_** The first version of install only creates the empty folder while now it includes scripts and all files the user need.
 
-### Development of the function: Create a new car.
+### 2. Development of the function: Create a new car.
 The following steps summarize the algorithm to create a new car in the system.
 1. get inputs (Plate, Model, Color, Passenger number)
 2. Check number of arguments. If 4 then continue, if not exit message.
@@ -155,7 +160,7 @@ bash frame "Car created successfully"
 
 **_fixed_** How to add new car information without deleting the previous ones ---> by using >> instead of >
 
-### Development of the function: Record a new car.
+### 3. Development of the function: Record a new car.
 The following steps summarize the algorithm to record a new car in the system.
 1. Check arguments (Plate, km, Dateout, Datein)
 2. Check that the car exists 
@@ -197,7 +202,7 @@ fi
 
 **_fixed_** The original version of this script records the license plate in the individual car file each time. After creating the syntax summary, I changed it into only input the other three arguments so it is easier to calculte the total distance.
 
-### Development of the function: Edit a car.
+### 4. Development of the function: Edit a car.
 The following steps summarize the algorithm to edit a car in the system.
 1. Ask the user to input a license plate and check if the car exits in maincarfile.txt
 2. Locate the line with the given car plate and delete it
@@ -237,7 +242,7 @@ bash frame "Car edited successfully"
 
 **_fixed_** Originally my idea was to locate the license plate and by using sed -i to replace the row with the new input. However, the code didn't work well, so by splitting it into two steps of deleting and adding new information the problem is solved.
 
-### Development of the function: Delete a car.
+### 5. Development of the function: Delete a car.
 The following steps summarize the algorithm to delete a car in the system.
 1. Get the input from the user
 2. Check the number of arguments
@@ -262,7 +267,7 @@ fi
 
 **_fixed_** How to check if a car exists in the maincarfile is by using the argument -f
 
-### Development of the function: Summary of distance
+### 6. Development of the function: Summary of distance
 The following steps summarize the algorithm to summarize the total distance a car has traveled.
 1. Check the number of arguments user input
 2. Check if the car exists
@@ -320,7 +325,7 @@ Solution:
       done < $1.txt
 ```
 
-### Development of the function: Data Backup
+### 7. Development of the function: Data Backup
 The following steps summarize the algorithm to backup the app in a desired location.
 1. Get input: user's desired location to install the app.
 2. Check the number of arguments
@@ -346,7 +351,7 @@ fi
 
 **_fixed_** Whenever I use the command cd to go to the desired location, the system always report back with too much arguments. Instead, I tried to get the location from the users and copy the folder directly.
 
-### Uninstall
+### 8. Uninstall
 The following steps summarize the algorithm to uninstall the app.
 1. Send out a message asking whether the user wants to uninstall the app.
 2. Move to desktop and remove the app folder
@@ -379,12 +384,12 @@ read answer
 
 **_fixed_** I realized that there should be a clear message being sent out to the user confirming if they are uninstalling and the app so I reconstructed my code and added two message to the file.
 
-### Help(Man) Page
+### 9. Help(Man) Page
 Given the fact that there is no man page on windows system, I decided to instead create an online support page(.md) in this repository under the folder "Help". 
 
 [Click here to access the help folder](https://github.com/comsci-uwc-isak/unit-1-project-LingyeWU/tree/master/Help)
 
-### Frame
+### 10. Frame
 The following steps summarize the algorithm to create a frame.
 1. Get an input from the user.
 2. Print out # around the word, placing the word (string) in right middle.
@@ -477,7 +482,7 @@ done
 echo " " #this is for going down one line
 ```
 
-### Test program
+### 11. Test program
 ***summary***
 For developers, I intentionally created a folder with 4 test files. (testrecord.sh, testinstall.sh, testdelete.sh, testcreate.sh) These files are for developers to test if the syntax of RentalCarApp actually works.
 
