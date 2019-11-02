@@ -68,12 +68,16 @@ Correction: install - Install does not create the test folder. Test is for the d
 #### Create
 ![Diagram](create.png)
 
+**Fig.4** This is the flow diagram to create a car.
 #### Record
 ![Diagram](record.png)
+
+**Fig.5** This is the flow diagram to record a trip.
 
 #### Summary
 ![Diagram](summary.png)
 
+**Fig.6** This is the flow diagram to summary the total distance of a car.
 
 Development
 --------
@@ -672,3 +676,17 @@ A backup system is considered during the process of designing | YES |
 Appendix
 ---------
 ### Work Cited
+
+All bash syntax researched during the development process are identified as follow.
+
+[1] PbearnePbearne 56522 gold badges88 silver badges2424 bronze badges, et al. “How Do I Check That Two Folders Are the Same in Linux.” Stack Overflow, 1 Apr. 1959, https://stackoverflow.com/questions/455061/how-do-i-check-that-two-folders-are-the-same-in-linux.
+
+[2] HakimHakim 3, et al. “How to Check If a File Contains a Specific String Using Bash.” Stack Overflow, 1 Sept. 1962, https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash.
+
+[3] “Man Page Repository at the UNIX and Linux Forums.” Go to Forum Page, https://www.unix.com/man-page-repository.php.
+
+[4] “GitHub.” Wikipedia, Wikimedia Foundation, 1 Nov. 2019, https://en.wikipedia.org/wiki/GitHub.
+
+[5] “Gnu.org.” [A GNU Head], https://www.gnu.org/software/bash/.
+
+
