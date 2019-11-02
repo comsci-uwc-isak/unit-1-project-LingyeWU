@@ -71,6 +71,9 @@ Correction: install - Install does not create the test folder. Test is for the d
 #### Record
 ![Diagram](record.png)
 
+#### Summary
+![Diagram](summary.png)
+
 
 Development
 --------
