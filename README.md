@@ -1,4 +1,10 @@
 ![CarRental](logo.png)
+```.py
+Marks=25
+Demo=4
+Total=(Marks+Demo)=29
+```
+**Graded on Nov 5**
 
 Car Rental Minimal App
 ===========================
@@ -44,7 +50,15 @@ Expected measureable outcomes by the client includes:
 1. A simple, accessible database
 1. A backup system is considered during the process of designing
 
+**Criterion A**
 
+|Level|Descriptor|
+|----|-----|
+|6|The client in the car rental office is identified and his situation described. The rationale for choosing the proposed product (Computer tools used) is justified and includes a range of appropriate criteria for evaluating the success of the product.|
+```.sh
+Rational
+* Great job with this criterion! One more justificaiton for using BASH is that we were learning it. 
+```
 Design
 ---------
 ### First sketch of the system diagram
@@ -78,6 +92,16 @@ Correction: install - Install does not create the test folder. Test is for the d
 ![Diagram](summary.png)
 
 **Fig.6** This is the flow diagram to summary the total distance of a car.
+
+## Criterion B
+|**level**|**Description**|
+|-----|------------|
+|8|An outline test plan is included but partially complete. A system diagram and some flow diagrams for algorithms in the product are included. They provide a basic understanding of how the product was developed.|
+```.sh
+Rationale
+*Great job with the system diagrams. You can use the figure as a reference point and refeer to it with Fig. 1. For example: "As shown in Fig. 1, the computational system consists of ..." This is necessary to be concrete about the reason from including the picture.
+* Good job with the flow diagrams. Here you did not get all the full marks because you are missing the description for all 3 diagrams. Remember, an image without description is an unbiguous tool. Add a paragram explaining what YOU see in the image and the reason why you included. 
+```
 
 Development
 --------
@@ -640,6 +664,16 @@ then
         fi
 ```
 
+## Criterion C
+|**level**|**Description**|
+|-----|------------|
+|6|The proposed solution is characterized by the appropriate use of existing tools. The techniques are adequate for the task and their use is explained. All sources are identified.|
+```.sh
+Rationale
+* Neat work here Lingye
+* Great job with the references. Try to use the references in body of the document in the place where you use the information, for example, when researching solutions to the problems you faced," As presented in [1], bash can be frustrating..."
+```
+
 Evaluation
 -----------
 
@@ -672,6 +706,16 @@ A backup system is considered during the process of designing | YES |
 1. Create an interface for the project, making the precedure more visual.
 
 1. Add a functuality to the project: Calculate. This syntax should enable the client to calculate the money of each car rent.
+
+## Criterion D
+|**level**|**Description**|
+|-----|------------|
+|5|The product is fully evaluated against the success criteria identified in criterion A. Recommendations for further improvement of the product are realistic.|
+```.sh
+Rationale
+* The Improvements are realistic and necessary. The evidence for the achievement of the criteria is limited so you lost some marks here. Next time, try to expand of the reasons/evidence that allows you to day that you have met the success criteria.
+```
+```
 
 Appendix
 ---------
